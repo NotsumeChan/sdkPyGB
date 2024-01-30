@@ -1,0 +1,5 @@
+game/notes/
+**/__pycache__/
+**/.env
+**/bans.json
+server/Assets/
