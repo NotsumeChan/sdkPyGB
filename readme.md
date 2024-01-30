@@ -49,8 +49,8 @@ The builds version will work the same as the python files, but is cleaner to wor
 
 ## Contributing
 
-Contributions are welcome! If you have any suggestions, bug reports, or feature requests, please open an issue on the [GitHub repository](https://github.com/NotsumeChan/sdkPyGB).
+Contributions are welcome! If you have any suggestions, bug reports, or feature requests, please open an issue on the [GitHub repository](https://github.com/NotsumeChan/sdkPyGB/issues).
 
 ## License
 
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+The license of this proyect is not decided :C
