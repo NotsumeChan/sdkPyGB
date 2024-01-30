@@ -20,7 +20,7 @@ python -m pip install -r requirements.txt
 
 To use PyGB, follow these steps:
 
-1. Clone this repository or download the latest release.
+1. Clone this repository or download the [latest release](https://github.com/NotsumeChan/sdkPyGB?tab=readme-ov-file#build-versions).
 2. Navigate to the PyGB directory.
 3. Follow the prompts to create a new game project.
 
@@ -28,7 +28,7 @@ To use PyGB, follow these steps:
 python main.py create *TheNameOFYourProyect
 ```
 
-4. Once the project is created, navigate to the project directory and start developing your game using the provided scripts and assets.
+4. Once the project is created, navigate to the project directory (it will be inside of the sdk directory) and start developing your game!!
 5. When you are ready to test it, you can use the next promp to build it
 
 ```bash
@@ -44,6 +44,8 @@ python main.py run *TheNameOFYourProyect
 ## Build Versions
 
 This repository includes a folder for build versions of the PyGB program. You can find pre-built versions of PyGB in the "builds" directory.
+
+The builds version will work the same as the python files, but is cleaner to work with
 
 ## Contributing
 
