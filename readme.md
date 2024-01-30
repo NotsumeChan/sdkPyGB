@@ -24,21 +24,27 @@ To use PyGB, follow these steps:
 2. Navigate to the PyGB directory.
 3. Follow the prompts to create a new game project.
 
+> [!NOTE]
+> Proyect = The name of your game proyect
+
+
 ```bash
-python main.py create *TheNameOFYourProyect
+python main.py create Proyect
 ```
 
-4. Once the project is created, navigate to the project directory (it will be inside of the sdk directory) and start developing your game!!
+4. Once the project is created, navigate to the project directory (it will be inside of the games folder) and start developing your game!!
 5. When you are ready to test it, you can use the next promp to build it
 
 ```bash
-python main.py build *TheNameOFYourProyect
+python main.py build Proyect
 ```
+> [!NOTE]
+> Your game will be inside the games directory
 
 6. Or this to directly run it
 
 ```bash
-python main.py run *TheNameOFYourProyect
+python main.py run Proyect
 ```
 
 ## Build Versions
