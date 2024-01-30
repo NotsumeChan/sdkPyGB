@@ -1,0 +1,5 @@
+pygame-ce
+moderngl
+mysql
+mysql.connector
+python-dotenv
