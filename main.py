@@ -8,37 +8,52 @@ from output import *
 
 def main()-> None:
     arg = sys.argv
+    arg = arg + [""] * (4 - len(arg))
 
-    match arg[0]:
+    match arg[1]:
         case "create":
-            if arg[1] == "-N":
-                #create a new project with network
-                pass
-            #create a new project
-            pass
+            if arg[3] == "-N":
+                print(f"create {arg[2]} with network")
+                #create game
+                return
+            print(f"create {arg[2]}")
+
 
         case "build":
-            #create a new exe (hopefully use numba to compile the code)
-            pass
+            print(f"building {arg[2]}...")
+            #build the game
+            print("build complete")
 
         case "run":
-            folders = os.listdir()
+            folders = os.listdir(os.getcwd() + "/games")
             for a in folders:
-                if arg[1] == a:
-                    #run especific game
+                if arg[2] == a:
+                    print(f"building {arg[2]}...")
+                    #build the game
+                    print("build complete")
+                    print(f"running {arg[2]}...")
                     Run(a)
+                    break
+            else:
+                print("game not found")
 
         case "clean":
-            if arg[1] == "-A":
+            if arg[2] == "-A":
                 #delete all games
                 pass
-            elif arg[1][0] != "-":
+            elif arg[2][0] != "-":
                 #delete especific game
                 pass 
             pass
 
         case "help":
-            #show commands list
+            print("""
+create <name> [-N] : create a new game
+build <name>       : build the game
+run <name>         : run the game
+clean <name>       : delete the game, if -A or no name is given, delete all games
+help               : print help
+""")
             pass
 
 if "__main__" == __name__:
