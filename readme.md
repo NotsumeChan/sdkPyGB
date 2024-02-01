@@ -56,7 +56,3 @@ The builds version will work the same as the python files, but is cleaner to wor
 ## Contributing
 
 Contributions are welcome! If you have any suggestions, bug reports, or feature requests, please open an issue on the [GitHub repository](https://github.com/NotsumeChan/sdkPyGB/issues).
-
-## License
-
-The license of this proyect is not decided :C
