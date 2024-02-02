@@ -13,7 +13,7 @@ PyGB (Python Game Builder) is a program designed to facilitate game development 
 Before using PyGB, ensure you have necessary dependencies installed running:
 
 > [!WARNING]
-> I higly recomend using pypy for this kind of use
+> I higly recomend using pypy for this kind of use,
 > But you can easily use python (just spect worst performance)
 
 ```bash
