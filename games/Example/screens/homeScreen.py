@@ -3,7 +3,7 @@ import pygame as py
 from Classes import *
 
 #screen define
-MainScreen   = Classes.Screen(PickResolution[0], PickResolution[1]) 
+MainScreen   = Screen(PickResolution[0], PickResolution[1]) 
 
 #Buttons of the screen
 MainButtons = {}

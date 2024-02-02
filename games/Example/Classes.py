@@ -84,7 +84,7 @@ class User():
 class Player():
     __slots__ = ("icon", "sprites", "w", "h", "x", "y")
     def __init__(self, x: int, y: int, img : str) -> None:
-        self.icon : py.Surface 
+        self.icon : py.Surface  = None
         self.sprites : dict = {} #will change to make dic with all sprites
         self.w : int = self.icon.get_width() if self.icon != None else 0
         self.h : int = self.icon.get_height() if self.icon != None else 0
