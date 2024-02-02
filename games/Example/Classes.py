@@ -98,8 +98,10 @@ class Player():
     def LoadIcon(self, img : str) -> None:
         if os.path.isfile(f"Assets/Characters/{img}"):
             self.icon = py.image.load(f"Assets/Characters/{img}").convert()
+        raise Exception("File or route not found")
 
     def FillSprites(self, CharName: str) -> None:
+        #still need to valide the existence of the file
         for filename in os.listdir("Assets/Characters"):
             if filename == "":
                 return
@@ -121,7 +123,8 @@ class Button():
         self.h : int = self.img.get_height()
         self.x : int = round(x+ (self.w/2))
         self.y : int = round(y+ (self.h/2))
-    def Draw(self, canvas) -> None:
+
+    def Draw(self, canvas) -> None:#change to draw sprite
         py.draw.rect(canvas, self.color, (self.x , self.y, self.w, self.h))
         canvas.blit( (self.x, self.y))
 

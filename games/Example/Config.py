@@ -40,7 +40,16 @@ RenderObj = ctx.vertex_array(Program, [(QuadBuffer, '2f 2f', 'vert', 'texcoord')
 
 #Agregar Opciones de Audio
 
-#Agregar Opciones de Controles
+#Teclado/input
+InputType = {"k":"keyboard", "c" : "controller", "t" : "touch"}
 
-#Agregar Repaming de keys y tipo de input
+touch : dict = {} #ni idea de como hacer esto
 
+Keyboard : dict = {"Foward": "K_w", "Left" : "K_a", "Right" : "K_d",  "Backward" : "K_s"} #agregar las keys de pygame para validaciond e inputs
+
+py.joystick.init()
+if py.joystick.get_count() > 0:
+    Controller : dict =  None #agregar los botones del mando de pygame para validacion de inputs
+py.joystick.quit()
+
+Input = Keyboard #input actual
