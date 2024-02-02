@@ -4,16 +4,20 @@ PyGB (Python Game Builder) is a program designed to facilitate game development 
 
 ## Features
 
-- **Game Project Generation**: PyGB automates the creation of a game project folder structure, including essential scripts and assets.
-- **Pygame-CE Integration**: Built on top of Pygame-CE, PyGB seamlessly integrates with this library, providing additional functionality and ease of use for game development.
+- **Game Project Generation**: PyGB automates the creation of a game project folder structure, including essential scripts.
+- **Pygame-CE Integration**: Built on top of Pygame-CE, PyGB seamlessly integrates with this library, providing additional abstraction and ease of use for game development.
 - **Build Process Assistance**: PyGB assists in the process of building game projects, providing tools and utilities to streamline the deployment process.
 
 ## Requirements
 
 Before using PyGB, ensure you have necessary dependencies installed running:
 
+> [!WARNING]
+> I higly recomend using pypy for this kind of use
+> But you can easily use python (just spect worst performance)
+
 ```bash
-python -m pip install -r requirements.txt
+pypy -m pip install -r requirements.txt
 ```
 
 ## Usage
@@ -29,22 +33,23 @@ To use PyGB, follow these steps:
 
 
 ```bash
-python main.py create Proyect
+pypy main.py create Proyect
 ```
 
 4. Once the project is created, navigate to the project directory (it will be inside of the games folder) and start developing your game!!
 5. When you are ready to test it, you can use the next promp to build it
 
 ```bash
-python main.py build Proyect
+pypy main.py build Proyect
 ```
+
 > [!NOTE]
 > Your game will be inside the games directory
 
 6. Or this to directly run it
 
 ```bash
-python main.py run Proyect
+pypy main.py run Proyect
 ```
 
 ## Build Versions
