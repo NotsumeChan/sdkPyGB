@@ -54,9 +54,12 @@ pypy main.py run Proyect
 
 ## Build Versions
 
-This repository includes a folder for build versions of the PyGB program. You can find pre-built versions of PyGB in the "builds" directory.
+This repository includes a [folder for build versions of the PyGB program](https://github.com/NotsumeChan/sdkPyGB/tree/main/builds). You can find pre-built versions of PyGB in the "builds" directory.
 
 The builds version will work the same as the python files, but is cleaner to work with
+
+> [!WARNING]
+> The first build version will come out when is stable enough 
 
 ## Contributing
 
