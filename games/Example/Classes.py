@@ -66,18 +66,12 @@ class User():
     def SaveConfig(self) -> None:
         pass
 
-    def LoadConfig(self) -> None:
-        pass
-
-    def leer_configuracion(self, archivo):
-        config = confpar.ConfigParser()
-        config.read(archivo)
-
+    def LoadConfig(self, archivo) -> None:
+        with open(archivo, "r") as file:
+            config = dict(file.read())
         # Convertir a un diccionario
-        configuracion_dict = {}
-        for seccion in config.sections():
-            if seccion == "":
-                configuracion_dict[seccion] = dict(config.items(seccion))
+        for key in config:
+            pass
 
         
 
@@ -86,8 +80,8 @@ class Player():
     def __init__(self, x: int, y: int, img : str) -> None:
         self.icon : py.Surface  = None
         self.sprites : dict = {} #will change to make dic with all sprites
-        self.w : int = self.icon.get_width() if self.icon != None else 0
-        self.h : int = self.icon.get_height() if self.icon != None else 0
+        self.w : int = self.icon.get_width() if self.icon else 0
+        self.h : int = self.icon.get_height() if self.icon else 0
         self.x : int = round(x+ (self.w/2))
         self.y : int = round(y+ (self.h/2))
 

@@ -1,31 +1,39 @@
-import sys
-import os
+from os import getcwd, listdir, remove
+from shutil import copytree
+from sys import argv
+
 from output import *
 
 #add flags to set if network is necessary
 #if network add db
 
-
 def main()-> None:
-    arg = sys.argv
+    arg = argv
     arg = arg + [""] * (4 - len(arg))
-
+    current = getcwd()
     match arg[1]:
         case "create":
             if arg[3] == "-N":
-                print(f"create {arg[2]} with network")
+                print("Network is not implemented yet")
+                #print(f"crating {arg[2]} with network")
                 #create game
-                return
+            try:
+                
+                copytree(current + "/games/" + "Example", current + "/games/" + arg[2])
+            except:
+                print(f"game {arg[2]} already exists")
+            
             print(f"create {arg[2]}")
 
-
         case "build":
+            print("Not implemented yet")
             print(f"building {arg[2]}...")
             #build the game
-            print("build complete")
+            print("buil d complete")
 
         case "run":
-            folders = os.listdir(os.getcwd() + "/games")
+            print("Not implemented yet")
+            folders = listdir(current + "/games")
             for a in folders:
                 if arg[2] == a:
                     print(f"building {arg[2]}...")
@@ -39,12 +47,17 @@ def main()-> None:
 
         case "clean":
             if arg[2] == "-A":
-                #delete all games
-                pass
-            elif arg[2][0] != "-":
-                #delete especific game
-                pass 
-            pass
+                #delete all games except Example adn Tutorial
+                for a in listdir(current + "/games"):
+                    if a not in ("Example","Tutorial"):
+                        print(f"deleting {a}...")
+                        remove(current + "/games/" + a)
+
+            for a in listdir(current + "/games"):
+                if arg[2].lower() == a.lower():
+                    print(f"deleting {a}...")
+                    remove(current + "/games/" + a)
+                    break
 
         case "help":
             print("""
