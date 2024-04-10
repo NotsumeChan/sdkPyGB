@@ -1,10 +1,10 @@
 import os
 import sys
-import pygame    as py
-from   time      import time
-from   functools import cache
-from   Config   import *
-import moderngl as mg
+import pygame       as py
+from   time         import time
+from   functools    import cache
+from   Config       import *
+import moderngl     as mg
 import configparser as confpar
 
 class Screen():
@@ -46,6 +46,7 @@ class Screen():
         return time() - old
 
 class User():
+    __slots__ = ("icon", "id", "nickname", "email", "password", "Characters")
     def __init__(self) -> None:
         self.icon = None
         self.id : int = ""
@@ -63,12 +64,18 @@ class User():
     def SignUp(self) -> None:
         pass
     
-    def SaveConfig(self) -> None:
-        pass
+    def SaveConfig(self,  ruta) -> None:
+        #TODO : hacer un parser de la data del player
+        with open(f"{ruta}", "w") as file:
+            file.write("{")
+            for key in vars(self).items():
+                file.write(f"{key}:{self[key]},")
+            file.write("}")
 
     def LoadConfig(self, archivo) -> None:
         with open(archivo, "r") as file:
-            config = dict(file.read())
+            text = file.read().decode("utf-8")
+            config = dict(text)
         # Convertir a un diccionario
         for key in config:
             pass
@@ -117,6 +124,10 @@ class Button():
         self.h : int = self.img.get_height()
         self.x : int = round(x+ (self.w/2))
         self.y : int = round(y+ (self.h/2))
+        self.action : callable = None
+
+    def onClick(self, action: callable) -> None:
+        self.action = action
 
     def Draw(self, canvas) -> None:#change to draw sprite
         py.draw.rect(canvas, self.color, (self.x , self.y, self.w, self.h))
@@ -129,4 +140,8 @@ class Button():
         return False
     
     def IsClick(self, mouse_pos) -> bool:
+        if self.action != None:
+            self.action()
+        else:
+            print("Button without acction, please assign one")
         return True if self.IsHover(mouse_pos) and py.mouse.get_pressed()[0] and self.reset == 10 else False

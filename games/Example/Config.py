@@ -7,9 +7,9 @@ from   Instancias import *
 from   Shaders    import Fragment as f
 from   Shaders    import Vertex   as v
 
-Basic : tuple = (640,480)
-Hd    : tuple = (1280,720)
-Fhd   : tuple = (1920,1080)
+Basic : tuple[int, int] = (640,480)
+Hd    : tuple[int, int] = (1280,720)
+Fhd   : tuple[int, int] = (1920,1080)
 
 PickResolution : tuple = Hd
 
